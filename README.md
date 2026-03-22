@@ -21,6 +21,29 @@ pnpm install
 pnpm dev:isometric
 ```
 
+## GitHub Pages
+
+This repo is prepared to publish to GitHub Pages at:
+
+- Root site: `https://1lifebqrious.github.io/misctools/`
+- Isometric tool: `https://1lifebqrious.github.io/misctools/isometric-drawing-tool/`
+
+The Pages build creates a landing page at the site root and places the app under its own subpath.
+
+```bash
+pnpm build:pages
+```
+
+That command generates the final static site tree in `dist/`.
+
+## First-time GitHub setup
+
+1. Open the repository settings in GitHub.
+2. Go to `Pages`.
+3. Set the source to `GitHub Actions`.
+4. Push to `main` or rerun the Pages workflow.
+5. Verify the root site and the isometric tool subpath both load correctly.
+
 ## Deployment
 
 The repository is organized for static-first deployment:
@@ -28,3 +51,5 @@ The repository is organized for static-first deployment:
 - GitHub Pages can host any tool that builds to static assets.
 - A VPS can serve the same built assets directly with a simple web server.
 - If a future tool needs backend behavior, keep that concern isolated to that tool instead of changing the whole repo model.
+
+GitHub Pages deployment is handled by the workflow in `.github/workflows/deploy-pages.yml`.

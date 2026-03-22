@@ -4,6 +4,8 @@
   "packageManager": "pnpm@10.30.3",
   "scripts": {
     "build": "pnpm -r build",
+    "build:landing": "node scripts/build-pages-site.mjs",
+    "build:pages": "pnpm --filter @misctools/isometric-drawing-tool build:pages && pnpm build:landing",
     "test": "pnpm -r test",
     "dev:isometric": "pnpm --filter @misctools/isometric-drawing-tool dev",
     "build:isometric": "pnpm --filter @misctools/isometric-drawing-tool build",

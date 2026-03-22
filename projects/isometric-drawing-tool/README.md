@@ -37,9 +37,16 @@ The document model is independent from React so future save/export features can 
 pnpm install
 pnpm --filter @misctools/isometric-drawing-tool dev
 pnpm --filter @misctools/isometric-drawing-tool build
+pnpm --filter @misctools/isometric-drawing-tool build:pages
 pnpm --filter @misctools/isometric-drawing-tool test
 pnpm --filter @misctools/isometric-drawing-tool test:e2e
 ```
+
+## Deployment URL
+
+- GitHub Pages path: `https://1lifebqrious.github.io/misctools/isometric-drawing-tool/`
+
+The normal `build` command keeps local preview behavior unchanged. The `build:pages` command uses the GitHub Pages asset base path so the app works when served from the repo subdirectory.
 
 ## Deferred
 
