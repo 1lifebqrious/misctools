@@ -1,5 +1,7 @@
 # misctools
 
+[![Deploy GitHub Pages](https://github.com/1lifebqrious/misctools/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/1lifebqrious/misctools/actions/workflows/deploy-pages.yml)
+
 Small web tools for learning, play, and everyday utility live in this repository as separate apps under `projects/`.
 
 ## Structure
