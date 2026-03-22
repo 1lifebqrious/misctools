@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,78 +16,241 @@
           <a href="../">Home</a>
           <a href="../impressum/">Impressum</a>
         </nav>
+        <div class="language-toggle" role="group" aria-label="Language selector">
+          <button class="language-button is-active" type="button" data-language="de">
+            DE
+          </button>
+          <button class="language-button" type="button" data-language="en">EN</button>
+        </div>
       </header>
 
-      <article class="legal-card">
-        <p class="eyebrow">Privacy notice</p>
-        <h1>Privacy policy</h1>
+      <article class="legal-card" data-language-panel="de">
+        <p class="eyebrow">Datenschutz</p>
+        <h1>Datenschutzerklärung</h1>
         <p class="legal-warning">
-          This page is a launch-ready structure, not final legal advice. Replace all
-          bracketed placeholders and update the analytics section with the actual tool you
-          choose before enabling tracking on the live site.
+          Diese Datenschutzerklärung gilt für die derzeitige Website ohne Kontaktformular,
+          ohne Nutzerkonten, ohne eingebettete Fremdinhalte und ohne aktive
+          Werbeeinblendungen. Wenn später zusätzliche Funktionen hinzukommen, muss diese
+          Erklärung entsprechend aktualisiert werden.
+        </p>
+
+        <section class="legal-section">
+          <h2>1. Verantwortlicher</h2>
+          <p><strong>Name:</strong> Rupam Bhattacharya</p>
+          <p><strong>Anschrift:</strong> Bleichstr. 5, 69190 Walldorf, Deutschland</p>
+          <p><strong>E-Mail:</strong> rupam.bhattacharya@gmail.com</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>2. Hosting und Server-Logfiles</h2>
+          <p>
+            Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf der Website
+            können technisch notwendige Verbindungsdaten verarbeitet werden, etwa die
+            IP-Adresse, Datum und Uhrzeit des Zugriffs, abgerufene Datei, Browsertyp,
+            Betriebssystem und Referrer-URL.
+          </p>
+          <p>
+            Die Verarbeitung erfolgt zur sicheren und stabilen Bereitstellung der Website.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse an sicherem und funktionsfähigem Betrieb der Website)
+          </p>
+          <p>
+            <strong>Empfänger / Hosting-Anbieter:</strong> GitHub, Inc., 88 Colin P.
+            Kelly Jr. Street, San Francisco, CA 94107, USA
+          </p>
+          <p>
+            <strong>Hinweis zu Drittlandübermittlungen:</strong> Eine Verarbeitung in den
+            USA kann nicht ausgeschlossen werden.
+          </p>
+          <p>
+            <strong>Speicherdauer:</strong> Die genaue Speicherdauer der
+            Hosting-bezogenen Logdaten wird vom Hosting-Anbieter bestimmt.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>3. Geplante Reichweitenmessung mit Google Analytics</h2>
+          <p>
+            Es ist beabsichtigt, künftig Google Analytics zur Reichweitenmessung zu
+            verwenden. Zum Zeitpunkt dieser Datenschutzerklärung ist Google Analytics auf
+            dieser Website jedoch noch nicht aktiviert.
+          </p>
+          <p>
+            Eine Aktivierung erfolgt erst nach technischer und rechtlicher Einrichtung
+            einer geeigneten Einwilligungslösung. Vor einer Aktivierung wird diese
+            Datenschutzerklärung entsprechend ergänzt und angepasst.
+          </p>
+          <p><strong>Aktueller Stand:</strong> nicht aktiv</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>4. Kontakt per E-Mail</h2>
+          <p>
+            Wenn Sie per E-Mail Kontakt aufnehmen, werden die von Ihnen mitgeteilten
+            Daten verarbeitet, um Ihre Anfrage zu bearbeiten und zu beantworten.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO; bei Anbahnung
+            eines Vertragsverhältnisses zusätzlich Art. 6 Abs. 1 lit. b DSGVO
+          </p>
+          <p>
+            <strong>Speicherdauer:</strong> Die Daten werden gelöscht, sobald die
+            jeweilige Anfrage abschließend bearbeitet wurde und keine gesetzlichen
+            Aufbewahrungspflichten entgegenstehen.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>5. Ihre Rechte</h2>
+          <p>
+            Sie haben nach der DSGVO insbesondere das Recht auf Auskunft, Berichtigung,
+            Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das
+            Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen
+            die Verarbeitung Ihrer Daten Widerspruch einzulegen.
+          </p>
+          <p>
+            Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu
+            beschweren.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>6. Änderungen dieser Datenschutzerklärung</h2>
+          <p>
+            Diese Datenschutzerklärung wird aktualisiert, wenn sich diese Website,
+            rechtliche Anforderungen oder die Art der Datenverarbeitung ändern.
+          </p>
+        </section>
+      </article>
+
+      <article class="legal-card" data-language-panel="en" hidden>
+        <p class="eyebrow">Privacy</p>
+        <h1>Privacy Policy</h1>
+        <p class="legal-warning">
+          This privacy policy applies to the current version of the website without a
+          contact form, user accounts, embedded third-party content, or active
+          advertising. If additional features are added later, this notice will need to
+          be updated accordingly.
         </p>
 
         <section class="legal-section">
           <h2>1. Controller</h2>
-          <p><strong>Name:</strong> [Your full legal name]</p>
-          <p><strong>Address:</strong> [Street, postal code, city, country]</p>
-          <p><strong>Email:</strong> [Your public contact email]</p>
+          <p><strong>Name:</strong> Rupam Bhattacharya</p>
+          <p><strong>Address:</strong> Bleichstr. 5, 69190 Walldorf, Germany</p>
+          <p><strong>Email:</strong> rupam.bhattacharya@gmail.com</p>
         </section>
 
         <section class="legal-section">
-          <h2>2. Hosting</h2>
+          <h2>2. Hosting and server log files</h2>
           <p>
-            This website is hosted via [GitHub Pages / your future hosting provider]. When
-            the site is accessed, the hosting provider may process server log data such as
-            IP address, requested page, timestamp, browser information, and referrer for
-            security and technical operation.
+            This website is provided through GitHub Pages. When the website is accessed,
+            technically necessary connection data may be processed, such as IP address,
+            date and time of access, requested file, browser type, operating system, and
+            referrer URL.
           </p>
-          <p><strong>Legal basis:</strong> [Art. 6(1)(f) GDPR or other reviewed basis]</p>
-          <p><strong>Processor / provider:</strong> [Insert provider legal entity and location]</p>
-          <p><strong>Retention:</strong> [Insert actual retention period if known]</p>
+          <p>
+            This processing is carried out in order to provide the website securely and
+            reliably.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> Art. 6(1)(f) GDPR
+            (legitimate interest in the secure and functional operation of the website)
+          </p>
+          <p>
+            <strong>Recipient / hosting provider:</strong> GitHub, Inc., 88 Colin P.
+            Kelly Jr. Street, San Francisco, CA 94107, USA
+          </p>
+          <p>
+            <strong>Note on international transfers:</strong> Processing in the United
+            States cannot be ruled out.
+          </p>
+          <p>
+            <strong>Retention:</strong> The exact retention period for hosting-related
+            log data is determined by the hosting provider.
+          </p>
         </section>
 
         <section class="legal-section">
-          <h2>3. Analytics</h2>
+          <h2>3. Planned audience measurement with Google Analytics</h2>
           <p>
-            This site is intended to use privacy-conscious visit analytics. Before launch,
-            update this section with the exact analytics provider, whether cookies or
-            similar technologies are used, whether consent is required, where data is
-            processed, and how users can withdraw consent.
+            Google Analytics is intended to be used in the future for audience
+            measurement. At the time of this privacy policy, however, Google Analytics is
+            not yet enabled on this website.
           </p>
-          <p><strong>Analytics tool:</strong> [Insert final tool name]</p>
-          <p><strong>Cookies / device access:</strong> [Yes / No / conditional]</p>
-          <p><strong>Legal basis:</strong> [Consent under Art. 6(1)(a) GDPR and TDDDG § 25, or reviewed alternative]</p>
-          <p><strong>Processor:</strong> [Insert provider legal entity and DPA status]</p>
-          <p><strong>International transfers:</strong> [Insert actual transfer position]</p>
+          <p>
+            It will only be activated after a suitable consent solution has been set up
+            from both a technical and legal perspective. Before activation, this privacy
+            policy will be updated accordingly.
+          </p>
+          <p><strong>Current status:</strong> not active</p>
         </section>
 
         <section class="legal-section">
-          <h2>4. Contact</h2>
+          <h2>4. Contact by email</h2>
           <p>
-            If you offer contact by email, explain that communication data will be
-            processed to answer the inquiry.
+            If you contact me by email, the data you provide will be processed in order
+            to handle and respond to your enquiry.
           </p>
-          <p><strong>Legal basis:</strong> [Art. 6(1)(b) or (f) GDPR depending on context]</p>
+          <p>
+            <strong>Legal basis:</strong> Art. 6(1)(f) GDPR; where the contact relates to
+            entering into a contract, additionally Art. 6(1)(b) GDPR
+          </p>
+          <p>
+            <strong>Retention:</strong> The data will be deleted once the respective
+            enquiry has been fully processed, unless statutory retention obligations
+            require longer storage.
+          </p>
         </section>
 
         <section class="legal-section">
           <h2>5. Your rights</h2>
           <p>
-            Under the GDPR, users may have rights of access, rectification, erasure,
-            restriction, objection, data portability, and the right to lodge a complaint
-            with a supervisory authority.
+            Under the GDPR, you have in particular the right of access, rectification,
+            erasure, restriction of processing, data portability, and the right to object
+            to processing on grounds relating to your particular situation.
+          </p>
+          <p>
+            You also have the right to lodge a complaint with a data protection
+            supervisory authority.
           </p>
         </section>
 
         <section class="legal-section">
-          <h2>6. Changes to this policy</h2>
+          <h2>6. Changes to this privacy policy</h2>
           <p>
-            Update this notice when the site introduces analytics, advertising, embedded
-            media, forms, or other new processing activities.
+            This privacy policy will be updated if this website, legal requirements, or
+            the way personal data is processed changes.
           </p>
         </section>
       </article>
     </main>
+    <script>
+      const buttons = document.querySelectorAll("[data-language]");
+      const panels = document.querySelectorAll("[data-language-panel]");
+
+      const setLanguage = (language) => {
+        document.documentElement.lang = language;
+
+        buttons.forEach((button) => {
+          const active = button.dataset.language === language;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.languagePanel !== language;
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.language);
+        });
+      });
+
+      setLanguage("de");
+    </script>
   </body>
-  </html>
+</html>

@@ -80,6 +80,38 @@ a {
   gap: 0.9rem;
 }
 
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.language-button {
+  border: 0;
+  background: transparent;
+  color: var(--soft-ink);
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.language-button.is-active {
+  background: var(--accent);
+  color: white;
+}
+
+.language-button:focus-visible {
+  outline: 2px solid rgba(15, 124, 144, 0.35);
+  outline-offset: 2px;
+}
+
 .topnav a,
 .footer-links a {
   text-decoration: none;

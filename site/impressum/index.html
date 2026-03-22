@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,47 +16,132 @@
           <a href="../">Home</a>
           <a href="../privacy/">Privacy</a>
         </nav>
+        <div class="language-toggle" role="group" aria-label="Language selector">
+          <button class="language-button is-active" type="button" data-language="de">
+            DE
+          </button>
+          <button class="language-button" type="button" data-language="en">EN</button>
+        </div>
       </header>
 
-      <article class="legal-card">
-        <p class="eyebrow">Legal notice</p>
+      <article class="legal-card" data-language-panel="de">
+        <p class="eyebrow">Rechtliches</p>
         <h1>Impressum</h1>
-        <p class="legal-warning">
-          Replace all bracketed placeholder content before publishing the custom domain.
-          For a Germany-based public site, this page typically needs to contain your real
-          legal identity and address details.
-        </p>
 
         <section class="legal-section">
-          <h2>Information according to § 5 DDG</h2>
-          <p><strong>Name:</strong> [Your full legal name]</p>
-          <p><strong>Address:</strong> [Street, postal code, city, country]</p>
-          <p><strong>Email:</strong> [Your public contact email]</p>
+          <h2>Angaben gemäß § 5 DDG</h2>
+          <p><strong>Name:</strong> Rupam Bhattacharya</p>
+          <p><strong>Anschrift:</strong> Bleichstr. 5, 69190 Walldorf, Deutschland</p>
+          <p><strong>E-Mail:</strong> rupam.bhattacharya@gmail.com</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Verantwortlich für den Inhalt</h2>
+          <p>Rupam Bhattacharya</p>
+          <p>Bleichstr. 5, 69190 Walldorf, Deutschland</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Weitere Angaben</h2>
+          <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: nicht vorhanden.</p>
+          <p>
+            Eintragung in ein Handels-, Vereins-, Partnerschafts- oder
+            Genossenschaftsregister: nicht vorhanden.
+          </p>
+          <p>
+            Rechtsform, vertretungsberechtigte Person, zuständige Aufsichtsbehörde sowie
+            Angaben zu reglementierten Berufen: nicht einschlägig.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Hinweis zur inhaltlichen Verantwortung</h2>
+          <p>
+            Ich bin nach den allgemeinen Gesetzen für die eigenen Inhalte auf dieser
+            Website verantwortlich. Trotz sorgfältiger Erstellung übernehme ich jedoch
+            keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der
+            bereitgestellten Informationen.
+          </p>
+          <p>
+            Soweit diese Website Links zu externen Websites enthält, habe ich auf deren
+            laufende Inhalte keinen Einfluss. Für die Inhalte verlinkter Seiten sind
+            ausschließlich deren jeweilige Betreiber verantwortlich. Bei Bekanntwerden von
+            Rechtsverletzungen werden entsprechende Links entfernt.
+          </p>
+        </section>
+      </article>
+
+      <article class="legal-card" data-language-panel="en" hidden>
+        <p class="eyebrow">Legal</p>
+        <h1>Legal Notice</h1>
+
+        <section class="legal-section">
+          <h2>Information according to Section 5 DDG</h2>
+          <p><strong>Name:</strong> Rupam Bhattacharya</p>
+          <p><strong>Address:</strong> Bleichstr. 5, 69190 Walldorf, Germany</p>
+          <p><strong>Email:</strong> rupam.bhattacharya@gmail.com</p>
         </section>
 
         <section class="legal-section">
           <h2>Responsible for content</h2>
-          <p>[Your full legal name]</p>
-          <p>[Street, postal code, city, country]</p>
+          <p>Rupam Bhattacharya</p>
+          <p>Bleichstr. 5, 69190 Walldorf, Germany</p>
         </section>
 
         <section class="legal-section">
-          <h2>Optional additional information</h2>
+          <h2>Additional information</h2>
+          <p>VAT identification number pursuant to Section 27a UStG: not available.</p>
           <p>
-            If applicable, add VAT ID, company register details, legal form, authorised
-            representative, supervisory authority, or regulated-profession information
-            here.
+            Entry in a commercial, association, partnership, or cooperative register:
+            none.
+          </p>
+          <p>
+            Legal form, authorised representative, supervisory authority, and
+            regulated-profession information: not applicable.
           </p>
         </section>
 
         <section class="legal-section">
           <h2>Content responsibility note</h2>
           <p>
-            Add any additional legally reviewed wording you want to use here. Keep this
-            page aligned with the actual operator of the domain and site.
+            I am responsible under general law for my own content on this website.
+            However, despite careful preparation, I do not guarantee that the information
+            provided is current, complete, or accurate.
+          </p>
+          <p>
+            Where this website contains links to external websites, I have no ongoing
+            influence over their content. The respective operators are solely responsible
+            for the content of linked pages. If I become aware of legal violations, such
+            links will be removed.
           </p>
         </section>
       </article>
     </main>
+    <script>
+      const buttons = document.querySelectorAll("[data-language]");
+      const panels = document.querySelectorAll("[data-language-panel]");
+
+      const setLanguage = (language) => {
+        document.documentElement.lang = language;
+
+        buttons.forEach((button) => {
+          const active = button.dataset.language === language;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.languagePanel !== language;
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.language);
+        });
+      });
+
+      setLanguage("de");
+    </script>
   </body>
-  </html>
+</html>
