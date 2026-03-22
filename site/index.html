@@ -3,39 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>misctools</title>
+    <title>Do Good With AI</title>
+    <meta
+      name="description"
+      content="A playful family lab of useful tools, projects, and experiments built while learning with AI."
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page-shell">
-      <section class="hero">
-        <p class="eyebrow">misctools</p>
-        <h1>Small tools for learning, play, and everyday utility.</h1>
-        <p class="hero-copy">
-          This repo publishes static web tools under one GitHub Pages site. The first
-          available tool is an isometric drawing surface for children learning 3D
-          sketching on dot grids.
-        </p>
-      </section>
+    <main class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./">Do Good With AI</a>
+        <nav class="topnav" aria-label="Primary">
+          <a href="#projects">Projects</a>
+          <a href="#story">Story</a>
+          <a href="#principles">Principles</a>
+          <a href="./impressum/">Impressum</a>
+          <a href="./privacy/">Privacy</a>
+        </nav>
+      </header>
 
-      <section class="tools" aria-labelledby="tools-title">
-        <div class="section-heading">
-          <h2 id="tools-title">Available tools</h2>
-          <p>Future tools can be added here without changing the deployment model.</p>
+      <section class="hero-panel">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Playful family project lab</p>
+          <h1>Useful little tools, built with curiosity, kindness, and a lot of fun.</h1>
+          <p class="hero-copy">
+            This is our public home for projects we build together while learning,
+            exploring ideas, and seeing how AI can help make practical things for real
+            people. It is part portfolio, part playground, and part family notebook.
+          </p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#projects">Explore projects</a>
+            <a class="button-secondary" href="#story">Meet the makers</a>
+          </div>
+          <ul class="hero-points" aria-label="Site highlights">
+            <li>Simple tools first</li>
+            <li>Built by a parent and son</li>
+            <li>Designed to learn in public</li>
+          </ul>
         </div>
 
-        <article class="tool-card">
-          <div>
-            <p class="tool-type">Learning tool</p>
+        <aside class="hero-board" aria-label="Creative board">
+          <div class="board-photo">
+            <img
+              src="./images/Rayan_and_Rupam%20cropped.PNG"
+              alt="Rupam and Rayan sitting together by a lake"
+            />
+          </div>
+          <div class="board-note board-note-yellow">
+            <p class="board-title">Why we build</p>
+            <p>To learn, to tinker, and to make ideas that feel useful right away.</p>
+          </div>
+          <div class="board-note board-note-blue">
+            <p class="board-title">What you'll find</p>
+            <p>Child-friendly tools, experiments, and future project stories.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-block" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">Things we have already built</h2>
+          <p>
+            The collection will grow over time. Each project should feel clear, useful,
+            and pleasant to use.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-card-featured">
+            <div class="project-meta">
+              <p class="tool-type">Learning tool</p>
+              <span class="status-pill">Live now</span>
+            </div>
             <h3>Isometric Drawing Tool</h3>
             <p>
-              Infinite-feeling isometric canvas with snapped lines, face fill,
-              selection, clipboard actions, and touch support for tablets and desktop.
+              A drawing surface for children learning 3D thinking through isometric
+              lines, shapes, and colored faces.
+            </p>
+            <ul class="project-facts">
+              <li>Snapped dot-to-dot drawing</li>
+              <li>Selection, move, copy, cut, and paste</li>
+              <li>Tablet-friendly canvas interactions</li>
+            </ul>
+            <a class="button-primary project-button" href="./isometric-drawing-tool/">
+              Open the tool
+            </a>
+          </article>
+
+          <article class="project-card project-card-placeholder">
+            <p class="tool-type">Coming next</p>
+            <h3>More tiny tools</h3>
+            <p>
+              This space is reserved for future ideas, experiments, and playful tools we
+              publish later.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block story-block" id="story" aria-labelledby="story-title">
+        <div class="section-heading">
+          <p class="eyebrow">Story</p>
+          <h2 id="story-title">A public portfolio we can grow over time</h2>
+        </div>
+        <div class="story-grid">
+          <div class="story-card">
+            <h3>Who I am</h3>
+            <p>
+              Add your personal introduction here later: who you are, what you care
+              about, and why this project matters to you.
             </p>
           </div>
-          <a class="tool-link" href="./isometric-drawing-tool/">Open tool</a>
-        </article>
+          <div class="story-card">
+            <h3>Who we are</h3>
+            <p>
+              Add the father-and-son story here later: how you build together, what your
+              12-year-old son enjoys, and what you both are learning.
+            </p>
+          </div>
+          <div class="story-card">
+            <h3>What this site is for</h3>
+            <p>
+              Use this section later to describe the bigger purpose: joyful learning,
+              useful tools, and building small things that help people.
+            </p>
+          </div>
+        </div>
       </section>
+
+      <section class="section-block principles-block" id="principles" aria-labelledby="principles-title">
+        <div class="section-heading">
+          <p class="eyebrow">Principles</p>
+          <h2 id="principles-title">How we want this site to feel</h2>
+        </div>
+        <div class="principles-grid">
+          <article class="principle-card">
+            <h3>Simple first</h3>
+            <p>We prefer tools that are easy to understand and easy to use.</p>
+          </article>
+          <article class="principle-card">
+            <h3>Friendly by default</h3>
+            <p>The design should feel welcoming for children, parents, and curious learners.</p>
+          </article>
+          <article class="principle-card">
+            <h3>Learn in public</h3>
+            <p>We share work openly so the site can grow into a real portfolio over time.</p>
+          </article>
+          <article class="principle-card">
+            <h3>Privacy-minded</h3>
+            <p>When analytics or tracking are used, they should be explained clearly and responsibly.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div>
+          <p class="footer-title">Do Good With AI</p>
+          <p class="footer-copy">
+            A growing collection of projects built for fun, learning, and useful outcomes.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="./isometric-drawing-tool/">Isometric tool</a>
+          <a href="./impressum/">Impressum</a>
+          <a href="./privacy/">Privacy</a>
+          <a href="https://github.com/1lifebqrious/misctools">GitHub</a>
+        </nav>
+      </footer>
     </main>
   </body>
   </html>
