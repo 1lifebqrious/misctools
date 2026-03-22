@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="bgGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(190 150) rotate(43) scale(290)">
+      <stop stop-color="#172554"/>
+      <stop offset="1" stop-color="#081022"/>
+    </radialGradient>
+    <linearGradient id="topG" x1="144" y1="192" x2="368" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="leftG" x1="144" y1="192" x2="256" y2="384" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#56CCF2"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="rightG" x1="256" y1="192" x2="368" y2="384" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="centerGlow" x1="256" y1="128" x2="256" y2="384" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(255,255,255,0.75)" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.05)" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="shadow" x="110" y="340" width="292" height="100" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="496" height="496" rx="108" fill="url(#bgGlow)"/>
+  <rect x="8" y="8" width="496" height="496" rx="108" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
+
+  <ellipse cx="256" cy="390" rx="96" ry="28" fill="black" fill-opacity="0.28" filter="url(#shadow)"/>
+
+  <path d="M256 128L368 192L256 256L144 192L256 128Z" fill="url(#topG)"/>
+  <path d="M144 192L256 256V384L144 320V192Z" fill="url(#leftG)"/>
+  <path d="M368 192L256 256V384L368 320V192Z" fill="url(#rightG)"/>
+
+  <path d="M256 128V384" stroke="url(#centerGlow)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M144 192L256 256" stroke="rgba(255,255,255,0.22)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M368 192L256 256" stroke="rgba(255,255,255,0.22)" stroke-width="5" stroke-linecap="round"/>
+
+  <path d="M390 90L399 115L424 124L399 133L390 158L381 133L356 124L381 115L390 90Z" fill="#FBBF24"/>
+  <path d="M422 150L426 161L437 165L426 169L422 180L418 169L407 165L418 161L422 150Z" fill="#FDE68A"/>
+</svg>

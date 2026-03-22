@@ -141,3 +141,6 @@ vite.config.ts.timestamp-*
 # Playwright outputs
 playwright-report/
 test-results/
+
+# macOS Finder metadata
+.DS_Store
