@@ -58,7 +58,7 @@ function Toolbar() {
 
   return (
     <aside className="toolbar" aria-label="Drawing controls">
-      <section className="toolbar-section">
+      <section className="toolbar-section" data-tour="toolbar-tools">
         <h2>Tools</h2>
         <div className="tool-grid" role="toolbar" aria-label="Tool selection">
           <details
@@ -108,7 +108,7 @@ function Toolbar() {
         </div>
       </section>
 
-      <section className="toolbar-section">
+      <section className="toolbar-section" data-tour="toolbar-color">
         <h2>Color</h2>
         <div className="palette-grid" aria-label="Color palette">
           {PALETTE_PRESETS.map((swatch) => (

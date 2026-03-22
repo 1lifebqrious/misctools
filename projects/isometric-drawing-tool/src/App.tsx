@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import EditorCanvas from "./components/EditorCanvas";
+import GuidedTourOverlay from "./components/GuidedTourOverlay";
 import StatusAnnouncer from "./components/StatusAnnouncer";
+import TutorialModal from "./components/TutorialModal";
 import Toolbar from "./components/Toolbar";
 import { PHONE_BREAKPOINT } from "./constants";
 import { detectFaces } from "./lib/faces";
@@ -9,6 +11,8 @@ import { useEditorStore } from "./store/editorStore";
 
 function App() {
   const [viewportWidth, setViewportWidth] = useState(() => window.innerWidth);
+  const [isTutorialOpen, setIsTutorialOpen] = useState(false);
+  const [isTourOpen, setIsTourOpen] = useState(false);
   const segments = useEditorStore((state) => state.segments);
   const fills = useEditorStore((state) => state.fills);
 
@@ -42,7 +46,7 @@ function App() {
 
   return (
     <main className="app-shell">
-      <header className="app-header">
+      <header className="app-header" data-tour="header">
         <div>
           <p className="eyebrow">Learning tool</p>
           <h1>Isometric Drawing Tool</h1>
@@ -54,6 +58,13 @@ function App() {
         <div className="header-stats" aria-label="Document summary">
           <span>{segments.length} lines</span>
           <span>{filledFaces.length} colored faces</span>
+          <button
+            type="button"
+            className="tutorial-trigger"
+            onClick={() => setIsTutorialOpen(true)}
+          >
+            Tutorial
+          </button>
         </div>
       </header>
 
@@ -62,6 +73,15 @@ function App() {
         <EditorCanvas faces={faces} gridPoints={gridPoints} />
       </section>
       <StatusAnnouncer faces={faces} />
+      <TutorialModal
+        open={isTutorialOpen}
+        onClose={() => setIsTutorialOpen(false)}
+        onStartTour={() => {
+          setIsTutorialOpen(false);
+          setIsTourOpen(true);
+        }}
+      />
+      <GuidedTourOverlay open={isTourOpen} onClose={() => setIsTourOpen(false)} />
     </main>
   );
 }

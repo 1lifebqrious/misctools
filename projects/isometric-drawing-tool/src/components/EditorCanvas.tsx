@@ -554,7 +554,7 @@ function EditorCanvas({ faces, gridPoints }: EditorCanvasProps) {
   };
 
   return (
-    <div className="canvas-panel" ref={containerRef}>
+    <div className="canvas-panel" ref={containerRef} data-tour="canvas">
       <canvas
         ref={canvasRef}
         className="canvas-surface"
@@ -565,7 +565,9 @@ function EditorCanvas({ faces, gridPoints }: EditorCanvasProps) {
         onPointerCancel={handlePointerCancel}
         onWheel={handleWheel}
       />
-      <aside className="canvas-help">{toolHint(tool)}</aside>
+      <aside className="canvas-help" data-tour="canvas-help">
+        {toolHint(tool)}
+      </aside>
     </div>
   );
 }
