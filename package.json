@@ -1,0 +1,12 @@
+{
+  "name": "misctools",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "dev:isometric": "pnpm --filter @misctools/isometric-drawing-tool dev",
+    "build:isometric": "pnpm --filter @misctools/isometric-drawing-tool build",
+    "test:isometric": "pnpm --filter @misctools/isometric-drawing-tool test"
+  }
+}
