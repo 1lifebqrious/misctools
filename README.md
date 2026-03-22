@@ -27,8 +27,8 @@ pnpm dev:isometric
 
 This repo is prepared to publish to GitHub Pages at:
 
-- Root site: `https://1lifebqrious.github.io/misctools/`
-- Isometric tool: `https://1lifebqrious.github.io/misctools/isometric-drawing-tool/`
+- Root site: `https://www.dobetterwithai.com/`
+- Isometric tool: `https://www.dobetterwithai.com/isometric-drawing-tool/`
 
 The Pages build creates a landing page at the site root and places the app under its own subpath.
 

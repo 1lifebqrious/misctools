@@ -44,7 +44,7 @@ pnpm --filter @misctools/isometric-drawing-tool test:e2e
 
 ## Deployment URL
 
-- GitHub Pages path: `https://1lifebqrious.github.io/misctools/isometric-drawing-tool/`
+- GitHub Pages path: `https://www.dobetterwithai.com/isometric-drawing-tool/`
 
 The normal `build` command keeps local preview behavior unchanged. The `build:pages` command uses the GitHub Pages asset base path so the app works when served from the repo subdirectory.
 
