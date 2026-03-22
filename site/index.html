@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do Better With AI</title>
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
       content="A playful family portfolio of useful tools, projects, and experiments built together while learning with AI, science, and technology."
@@ -42,6 +43,15 @@
       }
     </script>
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("site-theme");
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        document.documentElement.dataset.theme = savedTheme || preferredTheme;
+      })();
+    </script>
   </head>
   <body>
     <main class="site-shell">
@@ -54,6 +64,16 @@
           <a href="./impressum/">Impressum</a>
           <a href="./privacy/">Privacy</a>
         </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch color theme"
+          aria-pressed="false"
+          data-theme-toggle
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label">Dark mode</span>
+        </button>
       </header>
 
       <section class="hero-panel">
@@ -211,5 +231,41 @@
         </nav>
       </footer>
     </main>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const button = document.querySelector("[data-theme-toggle]");
+        const label = button?.querySelector(".theme-toggle-label");
+
+        const applyTheme = (theme, persist) => {
+          root.dataset.theme = theme;
+          if (persist) {
+            localStorage.setItem("site-theme", theme);
+          }
+
+          if (button && label) {
+            const isDark = theme === "dark";
+            button.setAttribute("aria-pressed", String(isDark));
+            label.textContent = isDark ? "Light mode" : "Dark mode";
+          }
+        };
+
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const savedTheme = localStorage.getItem("site-theme");
+
+        applyTheme(savedTheme || root.dataset.theme || (media.matches ? "dark" : "light"), false);
+
+        media.addEventListener("change", (event) => {
+          if (!localStorage.getItem("site-theme")) {
+            applyTheme(event.matches ? "dark" : "light", false);
+          }
+        });
+
+        button?.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+          applyTheme(nextTheme, true);
+        });
+      })();
+    </script>
   </body>
-  </html>
+</html>
