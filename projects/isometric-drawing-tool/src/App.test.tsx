@@ -38,7 +38,7 @@ describe("App", () => {
       unobserve() {}
       disconnect() {}
     } as typeof ResizeObserver;
-    HTMLCanvasElement.prototype.getContext = (() => {
+    HTMLCanvasElement.prototype.getContext = ((() => {
       const noop = () => {};
       return new Proxy(
         {},
@@ -51,7 +51,7 @@ describe("App", () => {
           }
         }
       ) as CanvasRenderingContext2D;
-    }) as typeof HTMLCanvasElement.prototype.getContext;
+    }) as unknown) as typeof HTMLCanvasElement.prototype.getContext;
 
     render(<App />);
     expect(screen.getByRole("heading", { name: "Isometric Drawing Tool" })).toBeInTheDocument();
