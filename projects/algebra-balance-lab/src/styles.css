@@ -1,0 +1,543 @@
+:root {
+  font-family: "Avenir Next", "Gill Sans", sans-serif;
+  color: #1f2933;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 36%),
+    linear-gradient(135deg, #f7efd8 0%, #ddeff0 45%, #d9d6f1 100%);
+  color-scheme: light;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.lab-shell {
+  min-height: 100vh;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.lab-header,
+.panel-card,
+.builder-card,
+.graph-shell,
+.reduction-card,
+.feedback-card,
+.phone-card,
+.overlay-card,
+.tour-card {
+  border-radius: 1.4rem;
+  border: 1px solid rgba(31, 41, 51, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px rgba(57, 53, 41, 0.14);
+}
+
+.lab-header {
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: #87622f;
+}
+
+.lab-header h1,
+.panel-card h2,
+.graph-shell h3,
+.reduction-card h2,
+.reduction-block h3,
+.feedback-card h2,
+.overlay-card h2,
+.tutorial-panel h3,
+.tour-card h2,
+.phone-card h1 {
+  margin: 0;
+}
+
+.header-copy,
+.problem-text,
+.picker-range,
+.feedback-card p,
+.tutorial-panel p,
+.tour-card p {
+  color: #5b6f7c;
+}
+
+.header-controls,
+.segmented-row,
+.button-row,
+.builder-stack,
+.reduction-grid,
+.tour-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.header-controls {
+  justify-content: flex-end;
+}
+
+.pill-button,
+.ghost-button,
+.primary-button {
+  border-radius: 999px;
+  border: 1px solid rgba(31, 41, 51, 0.14);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 0.7rem 1rem;
+}
+
+.pill-button.active,
+.primary-button {
+  background: #1368ce;
+  color: white;
+}
+
+.ghost-button.small,
+.primary-button.small {
+  padding: 0.45rem 0.7rem;
+}
+
+.ghost-button.tiny {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.lab-body {
+  display: grid;
+  grid-template-columns: 26rem minmax(0, 1fr);
+  gap: 1rem;
+  min-height: 0;
+}
+
+.left-panel {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.panel-card,
+.builder-card,
+.reduction-card,
+.feedback-card {
+  padding: 1rem;
+}
+
+.panel-header-row,
+.graph-title-row,
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.graph-title-row {
+  margin-bottom: 0.75rem;
+}
+
+.stage-panel {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 1rem;
+  min-height: 0;
+}
+
+.graph-card {
+  min-height: 0;
+}
+
+.graph-shell {
+  padding: 1rem;
+  min-height: 100%;
+}
+
+.graph-shell.waiting {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.graph-pill {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(19, 104, 206, 0.12);
+  color: #1368ce;
+  font-weight: 700;
+}
+
+.graph-pill-variable {
+  font-size: 1rem;
+  line-height: 1;
+  vertical-align: baseline;
+  text-shadow: none;
+}
+
+.graph-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 36%),
+    linear-gradient(180deg, rgba(250, 246, 233, 0.92), rgba(230, 238, 247, 0.86));
+}
+
+.graph-grid-line {
+  stroke: rgba(31, 41, 51, 0.12);
+  stroke-width: 1;
+}
+
+.graph-axis-line {
+  stroke-width: 1.8;
+}
+
+.graph-axis-line.x-axis {
+  stroke: rgba(198, 56, 80, 0.72);
+}
+
+.graph-axis-line.y-axis {
+  stroke: rgba(19, 104, 206, 0.72);
+}
+
+.graph-axis-label,
+.graph-callout {
+  fill: #4a5d6a;
+  font-size: 13px;
+}
+
+.equation-line {
+  fill: none;
+  stroke: #c63850;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.equation-line.second {
+  stroke: #1368ce;
+}
+
+.target-line {
+  fill: none;
+  stroke: #6a3fab;
+  stroke-width: 2.5;
+  stroke-dasharray: 10 8;
+}
+
+.guide-line {
+  stroke: rgba(31, 41, 51, 0.36);
+  stroke-width: 2;
+  stroke-dasharray: 8 6;
+}
+
+.solution-point {
+  fill: #00a36c;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.builder-summary {
+  margin-bottom: 0.9rem;
+  overflow-x: auto;
+}
+
+.equation-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.inline-equation-editor {
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: 100%;
+}
+
+.equation-chip {
+  min-width: 3rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.85rem;
+  background: rgba(19, 104, 206, 0.1);
+  border: 1px solid rgba(19, 104, 206, 0.18);
+  font-weight: 700;
+  text-align: center;
+}
+
+.equation-symbol {
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex: 0 0 auto;
+}
+
+.equation-variable {
+  font-weight: 800;
+  font-size: 2.15rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: 0 8px 22px rgba(31, 41, 51, 0.1);
+  flex: 0 0 auto;
+}
+
+.equation-variable.variable-x {
+  color: #c63850;
+}
+
+.equation-variable.variable-y {
+  color: #1368ce;
+}
+
+.equation-operator-button {
+  width: 3.35rem;
+  height: 3.35rem;
+  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  box-shadow: 0 18px 28px rgba(19, 104, 206, 0.18);
+  flex: 0 0 auto;
+}
+
+.builder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.pro-builder-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.picker-block {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+}
+
+.picker-block.center {
+  justify-items: center;
+}
+
+.picker-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.picker-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inline-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.equation-picker {
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.18rem;
+  flex: 0 0 auto;
+}
+
+.picker-value {
+  min-width: 3rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(31, 41, 51, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  font-weight: 700;
+  text-align: center;
+}
+
+.picker-value.empty {
+  color: #8d9aa3;
+}
+
+.picker-value.inline {
+  min-width: 2.7rem;
+  background: rgba(19, 104, 206, 0.08);
+  border-color: rgba(19, 104, 206, 0.16);
+}
+
+.picker-value.equation {
+  min-width: 2.9rem;
+  min-height: 2.9rem;
+  display: grid;
+  place-items: center;
+  padding: 0.45rem;
+  border-radius: 0.95rem;
+  background: linear-gradient(180deg, rgba(230, 238, 253, 0.96), rgba(243, 247, 255, 0.96));
+  border: 2px solid rgba(184, 207, 247, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.round-button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+.equation-step-button {
+  width: 1.9rem;
+  height: 1.9rem;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(31, 41, 51, 0.08);
+}
+
+.reduction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reduction-block {
+  padding: 0.85rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(31, 41, 51, 0.12);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.feedback-card.correct {
+  border-color: rgba(0, 163, 108, 0.32);
+}
+
+.feedback-card.incorrect {
+  border-color: rgba(209, 84, 28, 0.25);
+}
+
+.feedback-card.hint {
+  border-color: rgba(106, 63, 171, 0.25);
+}
+
+.overlay-backdrop,
+.tour-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.overlay-backdrop {
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(16, 20, 25, 0.58);
+}
+
+.overlay-card {
+  width: min(70rem, 100%);
+  max-height: 88vh;
+  overflow: auto;
+  padding: 1.25rem;
+}
+
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tutorial-panel {
+  border-radius: 1rem;
+  border: 1px solid rgba(31, 41, 51, 0.1);
+  background: rgba(255, 255, 255, 0.68);
+  padding: 1rem;
+}
+
+.step-list {
+  padding-left: 1.25rem;
+}
+
+.tour-overlay {
+  background: rgba(16, 20, 25, 0.52);
+}
+
+.tour-highlight {
+  position: fixed;
+  border-radius: 1.15rem;
+  border: 3px solid rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 0 0 9999px rgba(16, 20, 25, 0.12),
+    0 24px 48px rgba(16, 20, 25, 0.24);
+  pointer-events: none;
+}
+
+.tour-card {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: min(28rem, calc(100vw - 3rem));
+  padding: 1rem;
+}
+
+.phone-blocker {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.phone-card {
+  max-width: 30rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 1160px) {
+  .lab-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .builder-grid,
+  .pro-builder-grid,
+  .tutorial-grid,
+  .reduction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-header {
+    display: grid;
+  }
+}

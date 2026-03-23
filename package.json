@@ -5,10 +5,13 @@
   "scripts": {
     "build": "pnpm -r build",
     "build:landing": "node scripts/build-pages-site.mjs",
-    "build:pages": "pnpm --filter @misctools/isometric-drawing-tool build:pages && pnpm build:landing",
+    "build:pages": "pnpm --filter @misctools/isometric-drawing-tool build:pages && pnpm --filter @misctools/algebra-balance-lab build:pages && pnpm build:landing",
     "test": "pnpm -r test",
     "dev:isometric": "pnpm --filter @misctools/isometric-drawing-tool dev",
+    "dev:algebra": "pnpm --filter @misctools/algebra-balance-lab dev",
     "build:isometric": "pnpm --filter @misctools/isometric-drawing-tool build",
-    "test:isometric": "pnpm --filter @misctools/isometric-drawing-tool test"
+    "build:algebra": "pnpm --filter @misctools/algebra-balance-lab build",
+    "test:isometric": "pnpm --filter @misctools/isometric-drawing-tool test",
+    "test:algebra": "pnpm --filter @misctools/algebra-balance-lab test"
   }
 }

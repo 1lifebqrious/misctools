@@ -13,6 +13,7 @@ Small web tools for learning, play, and everyday utility live in this repository
 ## Current tools
 
 - `projects/isometric-drawing-tool`: an isometric drawing canvas for children learning 3D sketching on dot grids
+- `projects/algebra-balance-lab`: a graph-first algebra lab for linear equations and intersections
 
 ## Development
 
@@ -21,6 +22,7 @@ This repo uses a `pnpm` workspace.
 ```bash
 pnpm install
 pnpm dev:isometric
+pnpm dev:algebra
 ```
 
 ## GitHub Pages
@@ -29,6 +31,7 @@ This repo is prepared to publish to GitHub Pages at:
 
 - Root site: `https://www.dobetterwithai.com/`
 - Isometric tool: `https://www.dobetterwithai.com/isometric-drawing-tool/`
+- Algebra lab: `https://www.dobetterwithai.com/algebra-balance-lab/`
 
 The Pages build creates a landing page at the site root and places the app under its own subpath.
 
