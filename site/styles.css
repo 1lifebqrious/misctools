@@ -410,7 +410,7 @@ a {
 }
 
 .project-grid {
-  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .story-grid,
@@ -433,22 +433,46 @@ a {
   background: rgba(19, 30, 43, 0.8);
 }
 
-.project-card-featured {
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.project-card-isometric {
   background:
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.75), transparent 34%),
     linear-gradient(135deg, rgba(255, 243, 212, 0.95), rgba(223, 240, 236, 0.82));
 }
 
-:root[data-theme="dark"] .project-card-featured {
+:root[data-theme="dark"] .project-card-isometric {
   background:
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 34%),
     linear-gradient(145deg, rgba(48, 56, 29, 0.94), rgba(18, 53, 62, 0.88));
 }
 
+.project-card-algebra {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 34%),
+    linear-gradient(145deg, rgba(235, 244, 255, 0.95), rgba(226, 236, 255, 0.84));
+}
+
+:root[data-theme="dark"] .project-card-algebra {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(145deg, rgba(28, 40, 78, 0.92), rgba(16, 46, 75, 0.86));
+}
+
 .project-card-placeholder {
-  display: grid;
-  align-content: center;
-  min-height: 100%;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.7), transparent 32%),
+    linear-gradient(145deg, rgba(255, 247, 230, 0.96), rgba(249, 235, 219, 0.86));
+}
+
+:root[data-theme="dark"] .project-card-placeholder {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(145deg, rgba(70, 45, 24, 0.92), rgba(58, 33, 44, 0.88));
 }
 
 .project-meta {
@@ -460,13 +484,19 @@ a {
 }
 
 .project-facts {
-  margin: 1rem 0 0;
+  margin: 1rem 0 1rem;
   padding-left: 1.1rem;
   color: var(--soft-ink);
 }
 
 .project-button {
-  margin-top: 1rem;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.project-button-static {
+  margin-top: auto;
+  pointer-events: none;
 }
 
 .site-footer {
@@ -499,7 +529,6 @@ a {
 
 @media (max-width: 980px) {
   .hero-panel,
-  .project-grid,
   .story-grid,
   .principles-grid,
   .site-footer {
