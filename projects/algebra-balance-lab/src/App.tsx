@@ -18,8 +18,14 @@ import type { DifficultyLevel } from "./types";
 
 const LEVELS: DifficultyLevel[] = ["noob", "pro"];
 
+function hasGodMode(hash: string) {
+  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  return params.get("godmode") === "x";
+}
+
 function App() {
   const [viewportWidth, setViewportWidth] = useState(() => window.innerWidth);
+  const [godModeEnabled, setGodModeEnabled] = useState(() => hasGodMode(window.location.hash));
   const [tutorialOpen, setTutorialOpen] = useState(false);
   const [tourOpen, setTourOpen] = useState(false);
   const level = useSessionStore((state) => state.level);
@@ -49,8 +55,13 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => setViewportWidth(window.innerWidth);
+    const handleHashChange = () => setGodModeEnabled(hasGodMode(window.location.hash));
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   const noobPracticeQuestion = NOOB_QUESTIONS[practiceNoob.index];
@@ -68,7 +79,7 @@ function App() {
 
   const noobSolved = useMemo(() => noobGraphState(noobEquation).solutionX, [noobEquation]);
 
-  if (viewportWidth < PHONE_BREAKPOINT) {
+  if (viewportWidth < PHONE_BREAKPOINT && !godModeEnabled) {
     return (
       <main className="phone-blocker">
         <section className="phone-card">

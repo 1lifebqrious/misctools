@@ -9,8 +9,14 @@ import { detectFaces } from "./lib/faces";
 import { buildGridPointMap } from "./lib/geometry";
 import { useEditorStore } from "./store/editorStore";
 
+function hasGodMode(hash: string) {
+  const params = new URLSearchParams(hash.replace(/^#/, ""));
+  return params.get("godmode") === "x";
+}
+
 function App() {
   const [viewportWidth, setViewportWidth] = useState(() => window.innerWidth);
+  const [godModeEnabled, setGodModeEnabled] = useState(() => hasGodMode(window.location.hash));
   const [isTutorialOpen, setIsTutorialOpen] = useState(false);
   const [isTourOpen, setIsTourOpen] = useState(false);
   const segments = useEditorStore((state) => state.segments);
@@ -18,8 +24,13 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => setViewportWidth(window.innerWidth);
+    const handleHashChange = () => setGodModeEnabled(hasGodMode(window.location.hash));
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   const gridPoints = useMemo(() => buildGridPointMap(segments), [segments]);
@@ -29,7 +40,7 @@ function App() {
     [faces, fills]
   );
 
-  if (viewportWidth < PHONE_BREAKPOINT) {
+  if (viewportWidth < PHONE_BREAKPOINT && !godModeEnabled) {
     return (
       <main className="phone-blocker">
         <section className="phone-card" aria-labelledby="phone-card-title">
