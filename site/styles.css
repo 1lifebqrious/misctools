@@ -303,6 +303,7 @@ a {
 .button-secondary {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
 }
 
 :root[data-theme="dark"] .button-secondary {
